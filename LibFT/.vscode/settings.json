@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "mman.h": "c",
+        "libft_test.h": "c",
+        "libft.h": "c"
+    }
+}
