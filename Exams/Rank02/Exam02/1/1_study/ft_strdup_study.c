@@ -1,0 +1,12 @@
+// Expected files   : ft_strdup.c
+// Allowed functions: malloc
+// --------------------------------------------------------------------------------
+//
+// Reproduce the behavior of the function strdup (man strdup).
+
+#include <stdlib.h>
+
+char    *ft_strdup(char *src)
+{
+    
+}
