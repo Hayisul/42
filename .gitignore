@@ -1,0 +1,28 @@
+# macOS system files
+.DS_Store
+
+# C compilation files
+*.o
+*.out
+*.exe
+*.a
+*.so
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.~*
+
+# Debugging files
+debug/
