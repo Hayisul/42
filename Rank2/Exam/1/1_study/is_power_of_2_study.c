@@ -14,8 +14,6 @@ int is_power_of_2(unsigned int n)
 /*
 #include <stdio.h>
 
-int is_power_of_2(unsigned int n);
-
 int main(void)
 {
     unsigned int test_cases[] = {0, 1, 2, 4, 8, 16, 31, 32, 64, 127, 128, 255, 256, 1024, 2048, 4096, 8192, 16384};
@@ -26,4 +24,5 @@ int main(void)
         printf("%d\n", is_power_of_2(test_cases[i]));
     }
     return 0;
+}
 */

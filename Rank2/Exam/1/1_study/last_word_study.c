@@ -15,8 +15,11 @@ int main(int ac, char **av)
 {
     if (ac == 2)
     {
-        int i = 0;
-        *str = av[1];
+        int i;
+        char *str;
+
+        i = 0;
+        str = av[1];
         while (str[i])
             i++;
         i--;

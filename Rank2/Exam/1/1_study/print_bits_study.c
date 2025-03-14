@@ -19,8 +19,6 @@ void    print_bits(unsigned char octet)
 /*
 #include <unistd.h>
 
-void print_bits(unsigned char octet);
-
 int main(void)
 {
     unsigned char test_values[] = {0, 1, 5, 10, 42, 85, 127, 128, 255};
