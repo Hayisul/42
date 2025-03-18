@@ -11,17 +11,6 @@
 // by other characters or the array boundry.
 //
 // The flood_fill function won't fill diagonally.
-//
-// The flood_fill function will be prototyped like this:
-//  void  flood_fill(char **tab, t_point size, t_point begin);
-//
-// The t_point structure is prototyped like this: (put it in flood_fill.c)
-//
-//   typedef struct  s_point
-//   {
-//     int           x;
-//     int           y;
-//   }               t_point;
 
 typedef struct s_point {
 	int	x;
