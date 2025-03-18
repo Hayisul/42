@@ -1,20 +1,32 @@
+/* ********************************************* */
+/*                                               */
+/*                   REV_WSTR                    */
+/*                                               */
+/*   Prints the words of str in reverse order.   */
+/*                                               */
+/*   Usage:                                      */
+/*       ./rev_wstr "example string"             */
+/*                                               */
+/*   Example Output:                             */
+/*       string example                          */
+/*                                               */
+/* ********************************************* */
+
 #include <unistd.h>
 #include <stdlib.h>
 
-// Prints the words of str in reverse order.
-void rev_wstr(char *str)
-{
-    int end_index = 0;     // This will be the index of the null terminator.
+void rev_wstr(char *str) {
+    int end_index = 0; // Index of the null terminator.
     int word_start;
-    int first_word = 1;
+    int first_word = 1; // Flag for printing space between words.
 
     // Calculate the length of the string.
     while (str[end_index])
         end_index++;
-
+    
     // Traverse the string backward.
     while (end_index >= 0) {
-        // Skip trailing whitespace (and the null terminator).
+        // Skip trailing whitespace and the null terminator.
         while (end_index >= 0 && (str[end_index] == '\0' || str[end_index] == ' ' || str[end_index] == '\t'))
             end_index--;
         
@@ -35,10 +47,9 @@ void rev_wstr(char *str)
     }
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     if (argc == 2)
         rev_wstr(argv[1]);
     write(1, "\n", 1);
-    return 0;
+    return (0);
 }
