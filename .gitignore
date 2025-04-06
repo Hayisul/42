@@ -26,3 +26,6 @@
 
 # Debugging files
 debug/
+
+# Subject files
+/resources/

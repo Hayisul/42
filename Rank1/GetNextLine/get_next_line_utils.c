@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rantonia <rantonia@student.42luxembourg    +#+  +:+       +#+        */
+/*   By: rantonia <rantonia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 18:11:45 by rantonia          #+#    #+#             */
-/*   Updated: 2024/11/20 23:28:09 by rantonia         ###   ########.fr       */
+/*   Updated: 2025/04/06 19:22:02 by rantonia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
