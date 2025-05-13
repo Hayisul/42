@@ -4,7 +4,7 @@
 
 NAME        = push_swap
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -O2 $(INCLUDES)
+CFLAGS      = -Wall -Wextra -Werror $(INCLUDES)
 
 SRCS = \
        src/build/stack_builder.c \
