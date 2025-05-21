@@ -33,7 +33,6 @@ static void fill_row(t_point *row, char *line, int y)
         row[x].x = x;
         row[x].y = y;
         row[x].z = ft_atoi(split[x]);
-        row[x].color = 0xFFFFFF;
         x++;
     }
     while (x-- > 0)
@@ -47,13 +46,17 @@ static void allocate_and_fill(const char *filename, t_map *map)
     t_point **grid;
     char *line;
     int y;
-    
+
     fd = open(filename, O_RDONLY);
     grid = malloc(sizeof(t_point *) * map->height);
+    if (!grid)
+        return ;
     y = 0;
     while ((line = get_next_line(fd)))
     {
         grid[y] = malloc(sizeof(t_point) * map->width);
+        if (!grid[y])
+            return ;
         fill_row(grid[y], line, y);
         free(line);
         y++;

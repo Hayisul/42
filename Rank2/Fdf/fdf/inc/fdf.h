@@ -10,11 +10,12 @@
 # include "libft.h"
 
 // Constants
-# define ESC 53	//adapt keycode for linux (maybe 65307)
-# define ARROW_LEFT 123
-# define ARROW_RIGHT 124
-# define ARROW_DOWN 125
-# define ARROW_UP 126
+# define ESC         65307
+# define ARROW_LEFT  65361
+# define ARROW_RIGHT 65363
+# define ARROW_DOWN  65364
+# define ARROW_UP    65362
+
 # define WINDOW_WIDTH 1000
 # define WINDOW_HEIGHT 800
 # define ISO_ANGLE 0.523599
@@ -32,7 +33,6 @@ typedef struct s_point
 	int		x;
 	int		y;
 	int		z;
-	int		color;
 }	t_point;
 
 // Line structure
@@ -71,7 +71,6 @@ void	parse_map(const char *filename, t_map *map);
 void	draw_map(t_fdf *fdf);
 void	draw_line(t_fdf *fdf, t_2d a, t_2d b, int color);
 void	center_map(t_fdf *fdf);
-int		get_color(int z);
 int		ft_abs(int n);
 t_2d	project_iso(t_point p, t_fdf *fdf);
 

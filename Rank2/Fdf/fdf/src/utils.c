@@ -2,7 +2,10 @@
 
 int	ft_abs(int n)
 {
-	return (n < 0 ? -n : n);
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
 }
 
 t_2d	project_iso(t_point p, t_fdf *fdf)
@@ -11,7 +14,7 @@ t_2d	project_iso(t_point p, t_fdf *fdf)
 
 	p.x *= fdf->zoom;
 	p.y *= fdf->zoom;
-	p.z *= (fdf->zoom / 3);
+	p.z *= (fdf->zoom / 2);
 
     result.x = (int)((p.x - p.y) * cos(ISO_ANGLE));
     result.y = (int)((p.x + p.y) * sin(ISO_ANGLE) - p.z);
@@ -20,41 +23,15 @@ t_2d	project_iso(t_point p, t_fdf *fdf)
 
 void	center_map(t_fdf *fdf)
 {
-	int	map_width_px;
-	int	map_height_px;
+	t_point	center;
+	t_2d	proj;
 
-	map_width_px = (fdf->map.width + fdf->map.height) * fdf->zoom * cos(ISO_ANGLE);
-	map_height_px = (fdf->map.width + fdf->map.height) * fdf->zoom * sin(ISO_ANGLE);
+	center.x = fdf->map.width / 2;
+	center.y = fdf->map.height / 2;
+	center.z = 0;
 
-	fdf->shift_x = (WINDOW_WIDTH - map_width_px);
-	fdf->shift_y = (WINDOW_HEIGHT - map_height_px) / 2;
-}
+	proj = project_iso(center, fdf);
 
-int get_color(int z)
-{
-	if (z == 0)
-		return (0xFFFFFF); // white for sea level
-	else if (z < 10)
-		return (0x00FF00); // green for low hills
-	else if (z < 20)
-		return (0x996600); // brown for higher ground
-	else
-		return (0xCCCCCC); // gray for peaks
-}
-
-int	interpolate(int start, int end, float percent)
-{
-	return ((int)(start + (end - start) * percent));
-}
-
-int	get_interpolated_color(int start, int end, float percent)
-{
-	int	r;
-	int	g;
-	int	b;
-
-	r = interpolate((start >> 16) & 0xFF, (end >> 16) & 0xFF, percent);
-	g = interpolate((start >> 8) & 0xFF, (end >> 8) & 0xFF, percent);
-	b = interpolate(start & 0xFF, end & 0xFF, percent);
-	return ((r << 16) | (g << 8) | b);
+	fdf->shift_x = (WINDOW_WIDTH / 2) - proj.x;
+	fdf->shift_y = (WINDOW_HEIGHT / 2) - proj.y;
 }

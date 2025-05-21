@@ -4,17 +4,17 @@
 
 NAME        = fdf
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -g $(INCLUDES)
+CFLAGS      = -Wall -Wextra -Werror $(INCLUDES)
 
 # Directories
 INC_DIR     = inc
 LIBFT_DIR   = libft
-MLX_DIR     = minilibx_macos
+MLX_DIR     = minilibx
 
 # Libraries
 LIBFT_A     = $(LIBFT_DIR)/libft.a
 MLX_A       = $(MLX_DIR)/libmlx.a
-MLXFLAGS    = -framework OpenGL -framework AppKit
+MLXFLAGS    = -lXext -lX11 -lm -lbsd
 
 # Includes
 INCLUDES    = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
@@ -44,7 +44,6 @@ $(MLX_A):
 
 clean:
 	$(MAKE) clean -C $(LIBFT_DIR)
-	$(MAKE) clean -C $(MLX_DIR)
 	$(RM) $(OBJS) fdf.o
 
 fclean: clean

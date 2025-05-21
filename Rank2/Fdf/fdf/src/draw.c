@@ -54,8 +54,7 @@ static void draw_links(t_fdf *fdf, int x, int y)
 	int color;
 
 	a = project_iso(fdf->map.grid[y][x], fdf);
-	color = get_color(fdf->map.grid[y][x].z);
-    
+	color = 0xFFFFFF;
 	if (x < fdf->map.width - 1)
 	{
 		b = project_iso(fdf->map.grid[y][x + 1], fdf);

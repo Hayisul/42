@@ -44,8 +44,8 @@ int main(int argc, char **argv)
         return (1);
     }
     parse_map(argv[1], &fdf.map);
-	fdf.zoom = 20;
-    
+	fdf.zoom = 25;
+
     fdf.mlx = mlx_init();
     if (!fdf.mlx)
         return (1);
@@ -56,8 +56,8 @@ int main(int argc, char **argv)
     center_map(&fdf);
     draw_map(&fdf);
 
-    mlx_hook(fdf.win, 2, 0, handle_key, &fdf);      // key press
-    mlx_hook(fdf.win, 17, 0, handle_close, &fdf);   // close window
+    mlx_key_hook(fdf.win, handle_key, &fdf);
+    mlx_hook(fdf.win, 17, 0, handle_close, &fdf);
     mlx_loop(fdf.mlx);
     return (0);
 }
